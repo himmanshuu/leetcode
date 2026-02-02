@@ -1,3 +1,4 @@
+02/02/2026 - POTD
 class Solution {
     public:
         long long minimumCost(vector<int>& nums, int k, int dist) {
