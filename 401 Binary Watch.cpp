@@ -31,3 +31,25 @@ class Solution {
             return res;
         }
     };
+// Gospers hack
+    vector<string> readBinaryWatch(int turnedOn) {
+        vector<string>result;
+        if(turnedOn == 0) return {"0:00"};
+        int n = (1<<turnedOn) - 1;
+        while(n < (1<<10)){
+            helper(n);
+            int q = n & -n; // isolate right most set bit
+            int r = n + q; //  left bit just by right most cluster is set
+            int c = n^r;  // all original bits restored + 2 bits more (carry and carry right)
+            n = ((c>>2)/q) | r;
+            
+        }
+        return result;
+    }
+    void helper(int mask){
+        int hours = mask >> 6;
+        int minutes = mask & 63;
+        if(hours <= 11 && minutes <= 59){
+            result.push_back(to_string(hours) + ":" + (minutes < 10 ? "0" : "") + to_string(minutes));
+        }
+    }
