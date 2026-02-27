@@ -32,8 +32,8 @@ long long dfs(int i, int j){
 int maxDotProduct(vector<int>& nums1, vector<int>& nums2) {
     // this->nums1 = nums1;
     // this->nums2 = nums2;
-    this->n = nums1.size();
-    this->m = nums2.size();
+    n = nums1.size();
+    m = nums2.size();
     // fill(&memo[0][0], &memo[0][0] + 501*501, LLONG_MIN);
     // return dfs(0,0);
 
@@ -66,4 +66,3 @@ int main(){
 //     public:
      
 //     };
-// 1458. Max Dot Product of Two Subsequences
